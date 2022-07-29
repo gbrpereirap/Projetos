@@ -28,9 +28,8 @@ class Product:
             print('\033[0;31mProduto não cadastrado.\033[m')
 
 
-class Cart(Product):
+class Cart:
     def __init__(self):
-        Product.__init__(self)
         self.cart_products = {}
 
     def insert_cart_product(self, itens_name, itens_valor):

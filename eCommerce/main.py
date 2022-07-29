@@ -62,7 +62,10 @@ def purchase_menu(products_includes):
             option = int(option)
             if option == 1:
                 get_cart = lendo_nome()
-                shopping_cart.insert_cart_product(get_cart, products_includes.product['products'][get_cart])
+                try:
+                    shopping_cart.insert_cart_product(get_cart, products_includes.product['products'][get_cart])
+                except KeyError:
+                    pass
             elif option == 2:
                 get_cart = lendo_nome()
                 shopping_cart.delete_cart_produtos(get_cart)
