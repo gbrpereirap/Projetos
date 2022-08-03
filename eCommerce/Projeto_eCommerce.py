@@ -2,15 +2,15 @@ class Product:
     def __init__(self):
         self.product = {}
         self.name = ""
-        self.valor = 0
+        self.value = 0
 
-    def get_product(self, name, valor):
+    def get_product(self, name, value):
         self.name = name
-        self.valor = valor
+        self.value = value
         if "products" not in self.product:
-            self.product["products"] = {self.name: self.valor}
+            self.product["products"] = {self.name: self.value}
         else:
-            self.product["products"].update({self.name: self.valor})
+            self.product["products"].update({self.name: self.value})
 
     def display_register_products(self):
         try:
@@ -32,17 +32,17 @@ class Cart:
     def __init__(self):
         self.cart_products = {}
 
-    def insert_cart_product(self, itens_name, itens_valor):
+    def insert_cart_product(self, itens_name, itens_value):
         if "products" not in self.cart_products:
-            self.cart_products["products"] = {itens_name: itens_valor}
+            self.cart_products["products"] = {itens_name: itens_value}
         else:
-            self.cart_products["products"].update({itens_name: itens_valor})
+            self.cart_products["products"].update({itens_name: itens_value})
 
     def show_cart_products(self):
         try:
             print("-" * 40)
-            for name, valor in self.cart_products["products"].items():
-                print(f"\033[0;31mNome: {name}    Valor: {valor:.2f}\033[m")
+            for name, value in self.cart_products["products"].items():
+                print(f"\033[0;31mNome: {name}    Valor: {value:.2f}\033[m")
                 print("-" * 40)
         except KeyError:
             print('\033[0;31mProduto não cadastrado.\033[m\n')
@@ -60,8 +60,6 @@ class Cart:
         if not self.cart_products:
             return
         total = 0
-        for name, valor in self.cart_products["products"].items():
-            total += valor
+        for name, value in self.cart_products["products"].items():
+            total += value
         return f"\033[0;31mValor total do carrinho: {total:.2f}\033[m\n"
-
-
