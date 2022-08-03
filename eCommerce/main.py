@@ -65,13 +65,13 @@ def purchase_menu(products_includes):
                 try:
                     shopping_cart.insert_cart_product(get_cart, products_includes.product['products'][get_cart])
                 except KeyError:
-                    pass
+                    print('\033[0;31mOpção invalida. Produto não cadastrado\033[m')
             elif option == 2:
                 get_cart = lendo_nome()
                 shopping_cart.delete_cart_produtos(get_cart)
             elif option == 3:
                 shopping_cart.show_cart_products()
-                shopping_cart.sum_cart_total()
+                print(shopping_cart.sum_cart_total())
             else:
                 break
 

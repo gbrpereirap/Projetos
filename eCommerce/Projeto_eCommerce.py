@@ -57,10 +57,11 @@ class Cart:
             print('\033[0;31mProduto não cadastrado.\033[m\n')
 
     def sum_cart_total(self):
-        if self.cart_products:
-            total = 0
-            for name, valor in self.cart_products["products"].items():
-                total += valor
-            return f"Valor total do carrinho: {total:.2f}"
-        return
+        if not self.cart_products:
+            return
+        total = 0
+        for name, valor in self.cart_products["products"].items():
+            total += valor
+        return f"\033[0;31mValor total do carrinho: {total:.2f}\033[m\n"
+
 
