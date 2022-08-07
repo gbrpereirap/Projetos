@@ -35,7 +35,7 @@ def get_value():
 def registration_menu(products_includes):
     while True:
         option = input("1 - Adicionar Produtos\n2 - Remover Produtos\n3 - Mostar produtos Cadastrados"
-                       "\n4 - Sair\nEscolha uma opção: ")
+                       "\n4 - Voltar\nEscolha uma opção: ")
         if value_validate(option):
             option = int(option)
             if option == 1:
@@ -57,7 +57,7 @@ def purchase_menu(products_includes):
         products_includes.display_register_products()
         option = input(
             "1 - Adicionar Produtos ao carrinho\n2 - Remover Produtos do carrinho\n3 - Mostar produtos do carrinho"
-            "\n4 - Sair\nEscolha uma opção: ")
+            "\n4 - Voltar\nEscolha uma opção: ")
         if value_validate(option):
             option = int(option)
             if option == 1:
